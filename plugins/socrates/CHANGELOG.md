@@ -5,6 +5,18 @@ in [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.5.1] - 2026-11-10
+
+### Fixed
+
+- The migration check no longer shows "I couldn't check `~/.mentor`" to every new student:
+  the commands now also allow `Read(~/.mentor/**)`, which the check's `ls -d` needs outside
+  the session folder.
+- From the second message of a session on, reading the lessons and writing the progress asked
+  for approval (and was denied headless), because a command's `allowed-tools` holds only in
+  its own turn. The README's new Permissions section gives the six rules the student adds to
+  `~/.claude/settings.json` once, for every Socrates plugin.
+
 ### Changed
 
 - The repository is now `viniciusfranca019/socrates`. The old name `viniciusfranca019/mentor`

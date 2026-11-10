@@ -5,6 +5,13 @@ in [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [0.2.1] - 2026-11-10
+
+### Fixed
+
+- `/socrates-pdi:pdi` also allows `Read(~/.mentor/**)`, so the migration check no longer
+  reports that it could not look for `~/.mentor`.
+
 ## [0.2.0] - 2026-11-02
 
 ### Changed

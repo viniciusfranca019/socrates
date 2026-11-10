@@ -2,7 +2,7 @@
   "name": "socrates-pdi",
   "displayName": "Socrates · PDI",
   "description": "PDI (Individual Development Plan) with Socrates: a goal, competencies with level measured on the Socrates scale, 70-20-10 actions and check-ins with evidence. Requires the socrates plugin.",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": { "name": "Vinicius" },
   "license": "Apache-2.0",
   "keywords": ["socrates", "pdi", "development plan", "career"],
