@@ -62,8 +62,12 @@ No suite. Test headless in an empty `.sandbox` folder, with the engine and the c
 loaded at once: `claude -p "/socrates:onboarding" --plugin-dir <worktree>/plugins`.
 Outside the marketplace cache, reading the course files needs
 `--allowedTools "Read(//<worktree>/plugins/**)"`; installed from the marketplace, the
-commands' `Read(~/.claude/plugins/cache/socrates/**)` covers it. Delete the test
-`~/.socrates` at the end.
+commands' `Read(~/.claude/plugins/cache/socrates/**)` covers it. A command's
+`allowed-tools` holds only in the turn that invoked it: from the second turn on (`claude
+-c -p`), the reads of the cache and the writes to `~/.socrates` are denied unless the
+student has the rules from the README's Permissions section, which a test passes with
+`--settings <file>`. Read `permission_denials` in the `result` event of
+`--output-format stream-json --verbose`. Delete the test `~/.socrates` at the end.
 
 ## Git
 
