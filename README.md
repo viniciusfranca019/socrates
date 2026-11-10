@@ -35,6 +35,35 @@ The second command installs the course and `socrates`. Another course, later, is
 more `claude plugin install socrates-<course>@socrates`; `/socrates:onboarding` shows the
 catalog and the command for each one. The PDI too: `claude plugin install socrates-pdi@socrates`.
 
+### Permissions, once
+
+Socrates reads the lessons from the installed plugins and writes your progress to
+`~/.socrates`, both outside the folder you study in. The command you type
+(`/socrates:mentor-mode`) allows that by itself, but only for its first answer: from your
+second message on, Claude Code asks for approval on every lesson it opens and every note it
+takes. To allow it for good, add these rules to `~/.claude/settings.json`:
+
+```json
+{
+  "permissions": {
+    "allow": [
+      "Read(~/.claude/plugins/cache/socrates/**)",
+      "Read(~/.socrates/**)",
+      "Write(~/.socrates/**)",
+      "Edit(~/.socrates/**)",
+      "Bash(mkdir -p ~/.socrates:*)",
+      "Bash(date:*)"
+    ]
+  }
+}
+```
+
+If the file does not exist, create it with exactly that. If it already exists, add the six
+lines to its `permissions.allow` list, or ask Claude Code to do it: "add these permission
+rules to my ~/.claude/settings.json" and paste the block. They cover every Socrates plugin,
+the courses and the PDI included. Besides `date`, which only reads the clock, they reach
+nothing outside the Socrates marketplace and your progress folder. Open a new session afterwards.
+
 Installed it back when it was still called Mentor? Swap the plugin once. Your progress
 moves on the first Socrates command: it stops and gives you a single `!` command that moves
 `~/.mentor` to `~/.socrates` and renames the old Portuguese file names to English (the same
