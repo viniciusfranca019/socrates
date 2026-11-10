@@ -61,8 +61,8 @@ takes. To allow it for good, add these rules to `~/.claude/settings.json`:
 If the file does not exist, create it with exactly that. If it already exists, add the six
 lines to its `permissions.allow` list, or ask Claude Code to do it: "add these permission
 rules to my ~/.claude/settings.json" and paste the block. They cover every Socrates plugin,
-the courses and the PDI included, and nothing outside the Socrates marketplace and your
-progress folder. Open a new session afterwards.
+the courses and the PDI included. Besides `date`, which only reads the clock, they reach
+nothing outside the Socrates marketplace and your progress folder. Open a new session afterwards.
 
 Installed it back when it was still called Mentor? Swap the plugin once. Your progress
 moves on the first Socrates command: it stops and gives you a single `!` command that moves
